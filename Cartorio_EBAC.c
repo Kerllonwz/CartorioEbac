@@ -271,7 +271,8 @@ int main()
 	    printf("\tEscolha a opção desejada: \n\n");
 	    printf("\t1 - Registrar nomes\n");
 	    printf("\t2 - Consultar nomes\n");
-	    printf("\t3 - Deletar   nomes\n\n");//Fim
+	    printf("\t3 - Deletar   nomes\n");
+		printf("\t4 - Sair  do  menu \n\n");//Fim
 	
 	    printf("\tFeito por Gedyel Kerllon\n\n");//Creditos
 	
@@ -298,6 +299,13 @@ int main()
 	    	deletar();
     		break;
     		
+    		case 4:
+    		printf("=========================================\n\n");
+	    	printf("   Obrigado por utilizar o sistema!\n\n");
+    		printf("=========================================\n\n");
+    		return 0;
+    		break;
+    			
     		default:
     		printf("=========================================\n\n");
 	    	printf("   Esta opção não está disponível!\n\n");
