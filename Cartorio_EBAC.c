@@ -259,6 +259,8 @@ int main()
 	char senhadigitada[10]="a";
 	int comparacao;
 	
+	system("cls");
+	
 	setlocale(LC_ALL, "Portuguese");
 	
 	printf("=========================================\n\n");//Estética do menu
@@ -337,7 +339,8 @@ int main()
 		printf("=========================================\n\n");
 		printf("\t    Senha incorreta!\n\n");
 		printf("=========================================\n\n");
-		
+		system("pause");
+		return main();
 }
 
 
