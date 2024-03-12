@@ -253,70 +253,91 @@ int deletar() //Função de deletar
 
 
 int main()
-	{
+{
 	int opcao=0;//Definindo as variáveis
 	int rep=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(rep=1;rep=1;)//Repetir o menu
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("=========================================\n\n");//Estética do menu
+	printf("      Bem-vindo ao Cartório da Ebac\n\n Digite a senha de login de administrador: \n\n");
+	printf("=========================================\n\n");
+	printf("Opção: ");
+	
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
+		for(rep=1;rep=1;)//Repetir o menu
+		{
 		
-		system("cls");
+			system("cls");
+			
+	    	setlocale(LC_ALL, "Portuguese");//Definindo a linguagem
+		
+	    	printf("=========================================\n\n");//Estética do menu
+		
+	    	printf("\tCARTÓRIO DA EBAC\n\n");//Inicio
+	    	printf("\tEscolha a opção desejada: \n\n");
+	    	printf("\t1 - Registrar nomes\n");
+	    	printf("\t2 - Consultar nomes\n");
+	    	printf("\t3 - Deletar   nomes\n");
+			printf("\t4 - Sair  do  menu \n\n");//Fim
 	
-	    setlocale(LC_ALL, "Portuguese");//Definindo a linguagem
+	    	printf("\tFeito por Gedyel Kerllon\n\n");//Creditos
 	
-	    printf("=========================================\n");//Estética do menu
+	    	printf("=========================================\n\n");//Estética do menu
 	
-	    printf("\n");//Inicio
-	    printf("\tCARTÓRIO DA EBAC\n\n");
-	    printf("\tEscolha a opção desejada: \n\n");
-	    printf("\t1 - Registrar nomes\n");
-	    printf("\t2 - Consultar nomes\n");
-	    printf("\t3 - Deletar   nomes\n");
-		printf("\t4 - Sair  do  menu \n\n");//Fim
+	    	printf("Opção: ");
 	
-	    printf("\tFeito por Gedyel Kerllon\n\n");//Creditos
+	    	scanf("%d", &opcao);//Armazenando escolha do usuário 
 	
-	    printf("=========================================\n\n");//Estética do menu
-	
-	    printf("Opção: ");
-	
-	    scanf("%d", &opcao);//Armazenando escolha do usuário 
-	
-	    system("cls");//Limpar menu
+	    	system("cls");//Limpar menu
 	    
 	    
-	    switch(opcao) //inicio da seleção
-	    {
-	    	case 1:
-            registro();
-    		break;
+	    	switch(opcao) //inicio da seleção
+	    	{
+	    		case 1:
+            	registro();
+    			break;
     		
-    		case 2:
-    		consulta();
-	    	break;
+    			case 2:
+    			consulta();
+	    		break;
 	    	
-	    	case 3:
-	    	deletar();
-    		break;
+	    		case 3:
+	    		deletar();
+    			break;
     		
-    		case 4:
-    		printf("=========================================\n\n");
-	    	printf("   Obrigado por utilizar o sistema!\n\n");
-    		printf("=========================================\n\n");
-    		return 0;
-    		break;
+    			case 4:
+    			printf("=========================================\n\n");
+	    		printf("   Obrigado por utilizar o sistema!\n\n");
+    			printf("=========================================\n\n");
+    			return 0;
+    			break;
     			
-    		default:
-    		printf("=========================================\n\n");
-	    	printf("   Esta opção não está disponível!\n\n");
-    		printf("=========================================\n\n");
+    			default:
+    			printf("=========================================\n\n");
+	    		printf("   Esta opção não está disponível!\n\n");
+    			printf("=========================================\n\n");
     		
-			system("pause");
-	    	break;
+				system("pause");
+	    		break;
 	    	
-		} //fim da seleção
-	
+			} //fim da seleção
+		}
 	}
+	
+	else
+	    system("cls");
+		printf("=========================================\n\n");
+		printf("\t    Senha incorreta!\n\n");
+		printf("=========================================\n\n");
+		
 }
 
 
