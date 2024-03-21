@@ -43,7 +43,10 @@ int registro() // Função para cadastrar úsuarios
 	printf("=========================================\n\n");
 	
 	printf("Nome: ");
-	scanf("%s", nome);
+	scanf(" %[^\n]", nome); // Ler uma linha inteira (incluindo espaços)
+
+    // Limpar o buffer do teclado para evitar problemas com a próxima leitura
+    while (getchar() != '\n');
 
 	file = fopen(arquivo, "a");
 	fprintf(file,nome);
@@ -60,7 +63,10 @@ int registro() // Função para cadastrar úsuarios
 	printf("=========================================\n\n");
 	
 	printf("Sobrenome: ");
-	scanf("%s", sobrenome);
+	scanf(" %[^\n]", sobrenome); // Ler uma linha inteira (incluindo espaços)
+
+    // Limpar o buffer do teclado para evitar problemas com a próxima leitura
+    while (getchar() != '\n');
 	    
 	file = fopen(arquivo, "a");
 	fprintf(file,sobrenome);
@@ -146,9 +152,8 @@ int consulta() //Função de consulta
 
     return 1;
   }
-    system("cls");
     
-    
+	system("cls");
     
   // Leitura e exibição das informações
   while (fgets(conteudo, 200, file) != NULL)
@@ -156,19 +161,22 @@ int consulta() //Função de consulta
     switch (linha)
     {
     case 1:
-    	printf("=========================================\n");
-      printf("\n CPF: %s", conteudo);
-      break;
+    printf("=========================================\n");
+    printf("\n CPF: %s", conteudo);
+    break;
+    
     case 2:
-      printf("\n Nome: %s", conteudo);
-      break;
+    printf("\n Nome: %s", conteudo);
+    break;
+    
     case 3:
-      printf("\n Sobrenome: %s", conteudo);
-      break;
+    printf("\n Sobrenome: %s", conteudo);
+    break;
+    
     case 4:
-      printf("\n Cargo: %s\n\n", conteudo);
-      printf("=========================================\n\n");
-      break;
+    printf("\n Cargo: %s\n\n", conteudo);
+    printf("=========================================\n\n");
+    break;
     }
     linha++;
   }
@@ -250,8 +258,6 @@ int deletar() //Função de deletar
     return 0; // Retorna 0 indicando sucesso
 }
 
-
-
 int main()
 {
 	int opcao=0;//Definindo as variáveis
@@ -300,7 +306,6 @@ int main()
 	
 	    	system("cls");//Limpar menu
 	    
-	    
 	    	switch(opcao) //inicio da seleção
 	    	{
 	    		case 1:
@@ -329,7 +334,7 @@ int main()
     		
 				system("pause");
 	    		break;
-	    	
+	     	   	
 			} //fim da seleção
 		}
 	}
@@ -342,8 +347,4 @@ int main()
 		system("pause");
 		return main();
 }
-
-
-
-
 
